@@ -27,9 +27,16 @@ for (let i = 0; i < 10; i++) {
 }
 
 ///// Problem 2 - More fun...
+function countNum(num) {
+    let i = 0;
+    while (i < num) {
+        i++;
+    }
+}
+
 function countBig(bignum) {
     return new Promise((resolve, reject) => {
-        resolve(countNum(bignum))
+        resolve(countNum(bignum));
     });
 }
 
