@@ -11,15 +11,29 @@ function flip() {
 //// Add code here that will "flip" the coin ten times and write the 
 //// result to the console (e.g. "Heads" or "Tails" for each flip).
 
-
-
-
-///// Problem 2 - More fun...
-
-function countBig(bignum) {
-    // Add code here that returns a Promise that will resolve after it has counted to bignum
+function heads() {
+    console.log("Heads!");
 }
 
+function tails() {
+    console.log("Tails!");
+}
+
+let p = new Promise(flip);
+
+for (let i = 0; i < 10; i++) {
+    let p = flip()
+    p.then(heads, tails);
+}
+
+///// Problem 2 - More fun...
+function countBig(bignum) {
+    return new Promise((resolve, reject) => {
+        resolve(countNum(bignum))
+    });
+}
+
+    // Add code here that returns a Promise that will resolve after it has counted to bignum
 
 start = Date.now();
 bignum = 1000000000;
